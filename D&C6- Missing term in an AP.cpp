@@ -1,14 +1,17 @@
 /*
 Problem Statement:
+--------------------
 Given an array that represents elements of arithmetic progression in order.
 One element is missing in the progression, find the missing number.
 
 Assumptions:
+--------------------
 1: Exactly 1 missing element should be there.
 2- Commonn difference should be an integer
 3- May give wrong results if no missing number.
 
 Core Logic:
+-------------------
 The idea is to go to the middle element. Check if the difference between middle
 and next to middle is equal to diff or not, if not then the missing element lies
  between mid and mid+1. If the middle element is equal to n/2th term in Arithmetic
@@ -16,15 +19,19 @@ Series (Let n be the number of elements in input array), then missing element
 lies in right half. Else element lies in left half.
 
 Time Complexity:
+-------------------
 O(logn)
 
 Space Complexity:
+-------------------
 O(1)
 
 Technique Used:
+--------------------
 Divide and conquer
 
 References:
+-------------------
 https://www.geeksforgeeks.org/find-missing-number-arithmetic-progression/
 https://github.com/mission-peace/interview
 http://www.cplusplus.com/
