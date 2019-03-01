@@ -2,7 +2,7 @@
 Problem Statement:
 --------------------
 Given two binary strings that represent value of two integers, find the product of two strings.
-For example, if the first bit string is ì1100î and second bit string is ì1010î, output should 
+For example, if the first bit string is ‚Äú1100‚Äù and second bit string is ‚Äú1010‚Äù, output should 
 be 120.
 For simplicity, let the length of two strings be same and be n.
 
@@ -20,7 +20,7 @@ The product XY can be written as following.
 XY = (Xl*2n/2 + Xr)(Yl*2n/2 + Yr)
    = 2n XlYl + 2n/2(XlYr + XrYl) + XrYr
 If we take a look at the above formula, there are four multiplications of size n/2, so we basically 
-divided the problem of size n into four sub-problems of size n/2. But that doesnít help because solution
+divided the problem of size n into four sub-problems of size n/2. But that doesn‚Äôt help because solution
 of recurrence T(n) = 4T(n/2) + O(n) is O(n^2). The tricky part of this algorithm is to change the middle
 two terms to some other form so that only one extra multiplication would be sufficient.
 The following is tricky expression for middle two terms.
@@ -32,7 +32,7 @@ XY = 2n XlYl + 2n/2 * [(Xl + Xr)(Yl + Yr) - XlYl - XrYr] + XrYr
 With above trick, the recurrence becomes T(n) = 3T(n/2) + O(n) and solution of this recurrence is O(n1.59).
 
 What if the lengths of input strings are different and are not even? To handle the different length case
-we append 0ís in the beginning. To handle odd length, we put floor(n/2) bits in left half and ceil(n/2)
+we append 0‚Äôs in the beginning. To handle odd length, we put floor(n/2) bits in left half and ceil(n/2)
 bits in right half. So the expression for XY changes to following.
 
 XY = 22ceil(n/2) XlYl + 2ceil(n/2) * [(Xl + Xr)(Yl + Yr) - XlYl - XrYr] + XrYr
@@ -45,6 +45,7 @@ References:
 https://www.geeksforgeeks.org/karatsuba-algorithm-for-fast-multiplication-using-divide-and-conquer-algorithm/
 https://github.com/mission-peace/interview
 http://www.cplusplus.com/
+*/
 
 #include<iostream>
 using namespace std;
