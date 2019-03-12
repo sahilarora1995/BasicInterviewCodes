@@ -1,0 +1,58 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int kadane(int *a,int *start,int *finish, int n);
+int kadane(int *a,int *start,int *finish, int n)
+{
+	int sum=0,maxsum=INT_MIN,i;
+	*finish=-1;
+	int lstart=0;
+	
+	//scsnninhg from left to right and checking each combination
+	for(int i=0;i<n;i++)
+	{
+		sum+=a[i];
+		
+		//if total sum is negative make it 0 and update lstart
+		if(sum<0)
+		{
+			sum=0;
+			lstart=i+1;
+		}
+		
+	// if current sum is greater than maxsum then upodate	
+   else if(sum>maxsum)
+   {
+   	maxsum=sum;
+   	*start=lstart;
+   	*finish=i;
+   }
+   
+    }
+    //if atleast 1 element is positive
+    if(*finish!=-1 ) return maxsum;
+    
+    //if all emewents are negative then upodate and choose maximum single element
+    maxsum=a[0];
+    *start=*finish=0;
+    
+    for(i=1;i<n;i++)
+    {
+    	if(a[i]>maxsum)
+    	{
+    		maxsum=a[i];
+    		*start=*finish=i;
+		}
+	}
+ return maxsum;
+}
+int main()
+{
+	int a[]={1,6,-3,-7,9,-8};
+	int start,finish;
+	start=finish=0;
+	int n=sizeof(a)/sizeof(a[0]);
+	int sum=kadane(a,&start,&finish,n);
+	cout<<sum;
+	return 0;
+}
