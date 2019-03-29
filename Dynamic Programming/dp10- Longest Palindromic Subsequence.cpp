@@ -69,6 +69,9 @@ ll longestPalindromicSubsequence(string s,ll i,ll j)
 }
 START
 {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+	cout.tie(0);
 	string s="aaaabaaaa";
 	ll n=s.length();
 	debug(longestPalindromicSubsequence(s,0,n-1));
