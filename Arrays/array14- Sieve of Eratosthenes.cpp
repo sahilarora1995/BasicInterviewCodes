@@ -6,9 +6,9 @@ Given a number n, print all primes smaller than or equal to n. It is also given 
 Core Logic:
 --------------------
 Following is the algorithm to find all the prime numbers less than or equal to a given integer n 
-by Eratosthenes’ method:
+by Eratosthenesâ€™ method:
 
-Create a list of consecutive integers from 2 to n: (2, 3, 4, …, n).
+Create a list of consecutive integers from 2 to n: (2, 3, 4, â€¦, n).
 Initially, let p equal 2, the first prime number.
 Starting from p2, count up in increments of p and mark each of these numbers greater than or equal 
 to p2 itself in the list. These numbers will be p(p+1), p(p+2), p(p+3), etc..
@@ -66,6 +66,9 @@ void SieveofEratosthenes(ll n)
 		
 START
 {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+	cout.tie(0);
 	ll n;
 	debug("Enter n: ");
 	cin>>n;
