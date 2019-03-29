@@ -1,7 +1,7 @@
 /* 
 Problem Statement:
 --------------------
-Given an array arr[0 … n-1] containing n positive integers, a subsequence of arr[] is 
+Given an array arr[0 â€¦ n-1] containing n positive integers, a subsequence of arr[] is 
 called Bitonic if it is first increasing, then decreasing. Write a function that takes 
 an array as argument and returns the length of the longest bitonic subsequence.
 A sequence, sorted in increasing order is considered Bitonic with the decreasing part 
@@ -14,7 +14,7 @@ This problem is a variation of standard Longest Increasing Subsequence (LIS) pro
 Let the input array be arr[] of length n. We need to construct two arrays lis[] and lds[] 
 using Dynamic Programming solution of LIS problem. lis[i] stores the length of the Longest 
 Increasing subsequence ending with arr[i]. lds[i] stores the length of the longest Decreasing 
-subsequence starting from arr[i]. Finally, we need to return the max value of lis[i] + lds[i] – 1 
+subsequence starting from arr[i]. Finally, we need to return the max value of lis[i] + lds[i] â€“ 1 
 where i is from 0 to n-1.
 
 Time Complexity:
@@ -89,6 +89,9 @@ ll findMax(ll n)
 }
 START
 {
+        ios::sync_with_stdio(0);
+        cin.tie(0);
+	cout.tie(0);
 	ll a[]= {1,11,2,10,4,5,2,1};
 	ll n=size(a);
 	calculateLDS(a,n);
