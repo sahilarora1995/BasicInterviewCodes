@@ -1,3 +1,31 @@
+/*
+Author: Sahil Arora
+Date:   18-06-2019
+
+Problem Statement:
+----------------------
+Given an array A[] consisting 0s, 1s and 2s. The task is to write a function that 
+sorts the given array. The functions should put all 0s first, then all 1s and all 2s in last.
+
+Core Logic:
+----------------------
+Lo := 1; Mid := 1; Hi := N;
+while Mid <= Hi do
+Invariant: a[1..Lo-1]=0 and a[Lo..Mid-1]=1 and a[Hi+1..N]=2; a[Mid..Hi] are unknown.
+case a[Mid] in
+0: swap a[Lo] and a[Mid]; Lo++; Mid++
+1: Mid++
+2: swap a[Mid] and a[Hi]; Hi–-
+
+Time Complexity:
+--------------------
+0(n)
+
+References:
+--------------------
+https://www.geeksforgeeks.org/sort-an-array-of-0s-1s-and-2s/
+http://www.cplusplus.com/
+*/
 #include<iostream>
 #include<algorithm>
 #include<cstring>
