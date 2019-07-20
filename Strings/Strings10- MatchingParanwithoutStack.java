@@ -1,6 +1,4 @@
-
-	// Java program to check if parenthesis are 
-	// balanced or not in an expression. 
+ 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -75,8 +73,7 @@ import java.util.Arrays;
 		File file = new File("C:\\Users\\Sahil Arora\\eclipse-workspace\\MuraliSir\\src\\string"); 
 		  
 		 BufferedReader br = new BufferedReader(new FileReader(file)); 
-		  char expr[]= br.readLine().toCharArray();
-	//	char expr[] = "[(])".toCharArray(); 
+		 char expr[]= br.readLine().toCharArray();
 		int n = expr.length; 
 		if (check(expr, n)) 
 			System.out.println("Balanced"); 
@@ -84,6 +81,4 @@ import java.util.Arrays;
 			System.out.println("Not Balanced"); 
 	} 
 	} 
-
-	/* This code contributed by PrinciRaj1992 */
 
