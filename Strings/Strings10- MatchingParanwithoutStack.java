@@ -1,7 +1,7 @@
 
 	// Java program to check if parenthesis are 
 	// balanced or not in an expression. 
-	import java.io.BufferedReader;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
