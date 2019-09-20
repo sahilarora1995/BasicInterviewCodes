@@ -1,0 +1,35 @@
+class Solution {
+public:
+    vector<vector<int>> permuteUnique(vector<int>& nums) {
+        
+        int numPerm = fact(nums.size()) / numRepeatedElementsFact(nums);
+        vector<vector<int>> ret(numPerm);
+        int i = 0;
+        while(numPerm--) {
+            ret[i++] = vector<int>(nums);
+            next_permutation(nums.begin(), nums.end());
+        }
+        return ret;
+    }
+    
+    int fact(int n) {
+        int ret = n;
+        while(--n) {
+            ret *= n;
+        }
+        return ret;
+    }
+    
+    int numRepeatedElementsFact(const vector<int>& nums) {
+        unordered_map<int, int> freq;
+        for(int i : nums) {
+            freq[i]++;
+        }
+        int ret = 1;
+        for(auto it = freq.begin(); it != freq.end(); it++) {
+            ret *= fact(it->second);
+        }
+        return ret;
+    }
+
+};
