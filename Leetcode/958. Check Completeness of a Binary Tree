@@ -1,0 +1,31 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool isCompleteTree(TreeNode* root) {
+       queue<TreeNode*> q;
+	q.push(root);
+	bool null_visited = false;
+	while(!q.empty()){
+		auto n = q.front();
+		q.pop();
+		if (!n)
+			null_visited = true;
+		else{
+			if (null_visited)
+				return false;
+
+			q.push(n->left);
+			q.push(n->right);
+		}
+	}
+	return true;
+    }
+};
